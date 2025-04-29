@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 function SpacecraftBuilder() {
+
+    //render itemform and inventry display
+    //play with useContext to avoid prop drilling
     const [formData, setFormData] = useState({
         name: "",
         quantity: 0,
@@ -24,33 +27,39 @@ function SpacecraftBuilder() {
         <form onSubmit={handleSubmit}>
             <h2>Spacecraft Builder</h2>
             <h3>Add an Item to the Inventory</h3>
-            <label htmlFor="name">Name</label>
-            <input
-                type="text"
-                placeholder="name"
-                name="name"
-                id="name"
-                value={formData.name}
-                onChange={handleChange}
-            />
-            <label htmlFor="quantity">Quantity</label>
-            <input
-                type="number"
-                placeholder="quantity"
-                name="quantity"
-                id="quantity"
-                value={formData.quantity}
-                onChange={handleChange}
-            />
-            <label htmlFor="purpose">Purpose</label>
-            <input
-                type="text"
-                placeholder="purpose"
-                name="purpose"
-                id="purpose"
-                value={formData.purpose}
-                onChange={handleChange}
-            />
+            <div>
+                <label htmlFor="name">Name</label>
+                <input
+                    type="text"
+                    placeholder="name"
+                    name="name"
+                    id="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+            </div>
+            <div>
+                <label htmlFor="quantity">Quantity</label>
+                <input
+                    type="number"
+                    placeholder="quantity"
+                    name="quantity"
+                    id="quantity"
+                    value={formData.quantity}
+                    onChange={handleChange}
+                />
+            </div>
+            <div>
+                <label htmlFor="purpose">Purpose</label>
+                <input
+                    type="text"
+                    placeholder="purpose"
+                    name="purpose"
+                    id="purpose"
+                    value={formData.purpose}
+                    onChange={handleChange}
+                />
+            </div>
             <button>Add Item</button>
         </form>
     )
