@@ -20,7 +20,7 @@ function ItemForm({ onItemSubmit }) {
 
         setFormData((prevFormData) => ({
             ...prevFormData,
-            [name]: type === "checkbox" ? checked : value
+            [name]: type === "checkbox" ? checked : (type === "number" ? Number(value) : value)
         }));
 
     };
@@ -32,7 +32,7 @@ function ItemForm({ onItemSubmit }) {
         if (!formData.name) {
             newFormErrors.name = true;
         }
-        if (!formData.quantity) {
+        if (formData.quantity <= 0) {
             newFormErrors.quantity = true;
         }
         if (!formData.purpose) {
@@ -110,7 +110,7 @@ function ItemForm({ onItemSubmit }) {
                 <label htmlFor="agreeToTerms">Agree to Terms</label>
             </div>
 
-            <button>Add Item</button>
+            <button type="submit">Add Item</button>
         </form>
     )
 

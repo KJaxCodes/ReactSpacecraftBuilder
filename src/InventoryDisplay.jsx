@@ -6,7 +6,7 @@ function InventoryDisplay({ inventory }) {
             <h3>Inventory</h3>
 
             {
-                inventory.map((item) => {
+                inventory.map((item) => (
                     <div key={item.id}>
                         <div>
                             <ItemCard
@@ -16,7 +16,7 @@ function InventoryDisplay({ inventory }) {
                             />
                         </div>
                     </div>
-                })
+                ))
             }
 
         </div>
