@@ -11,6 +11,8 @@ body {
   background-color: black;
   color: white;
   font-family: 'Space Mono', monospace;
+  width: 100vw;
+  height: 100vh;
 }
 
 html,
@@ -37,4 +39,6 @@ button:hover {
 
 .Input {
   margin: 2rem;
+  padding: 1rem;
+  border: 2px solid #ffffff;
 }

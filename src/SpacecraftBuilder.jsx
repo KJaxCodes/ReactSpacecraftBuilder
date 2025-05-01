@@ -4,9 +4,10 @@ import { useState } from "react";
 import ItemForm from "./ItemForm";
 import InventoryDisplay from "./InventoryDisplay";
 
+
 function SpacecraftBuilder() {
 
-    //render itemform and inventry display
+    //render itemform and inventory display
     //play with useContext to avoid prop drilling
 
     const [inventory, setInventory] = useState([]);
@@ -15,14 +16,18 @@ function SpacecraftBuilder() {
         setInventory((prevInventory) => [...prevInventory, item]);
     }
 
+    function deleteItem(id) {
+        setInventory((prevInventory) => prevInventory.filter((item) => item.id !== id));
+    }
+
     return (
         <div>
-            <h2>Spacecraft Builder</h2>
+            <h1>Spacecraft Builder</h1>
             <div>
                 <ItemForm onItemSubmit={addItem} />
             </div>
             <div>
-                <InventoryDisplay inventory={inventory} />
+                <InventoryDisplay inventory={inventory} onDeleteIte={deleteItem} />
             </div>
         </div>
     )
