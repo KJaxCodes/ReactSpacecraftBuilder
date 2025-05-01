@@ -4,3 +4,37 @@
   padding: 2rem;
   text-align: center;
 } */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: black;
+  color: white;
+  border: solid 1px rgb(91, 255, 3);
+  border-radius: 2px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00cccc;
+}
+
+.Input {
+  margin: 2rem;
+}

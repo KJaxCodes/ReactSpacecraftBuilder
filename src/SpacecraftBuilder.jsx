@@ -1,67 +1,30 @@
 import { useState } from "react";
 
+//components
+import ItemForm from "./ItemForm";
+import InventoryDisplay from "./InventoryDisplay";
+
 function SpacecraftBuilder() {
 
     //render itemform and inventry display
     //play with useContext to avoid prop drilling
-    const [formData, setFormData] = useState({
-        name: "",
-        quantity: 0,
-        purpose: ""
-    });
-    const handleChange = (evt) => {
-        setFormData((currData) => {
-            return {
-                ...currData,
-                [evt.target.name]: evt.target.value
-            };
-        });
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Submitted!");
-        // addItem(formData);
-        // where do I put addItem function?
+
+    const [inventory, setInventory] = useState([]);
+
+    function addItem(item) {
+        setInventory((prevInventory) => [...prevInventory, item]);
     }
+
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
             <h2>Spacecraft Builder</h2>
-            <h3>Add an Item to the Inventory</h3>
             <div>
-                <label htmlFor="name">Name</label>
-                <input
-                    type="text"
-                    placeholder="name"
-                    name="name"
-                    id="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
+                <ItemForm onItemSubmit={addItem} />
             </div>
             <div>
-                <label htmlFor="quantity">Quantity</label>
-                <input
-                    type="number"
-                    placeholder="quantity"
-                    name="quantity"
-                    id="quantity"
-                    value={formData.quantity}
-                    onChange={handleChange}
-                />
+                <InventoryDisplay inventory={inventory} />
             </div>
-            <div>
-                <label htmlFor="purpose">Purpose</label>
-                <input
-                    type="text"
-                    placeholder="purpose"
-                    name="purpose"
-                    id="purpose"
-                    value={formData.purpose}
-                    onChange={handleChange}
-                />
-            </div>
-            <button>Add Item</button>
-        </form>
+        </div>
     )
 
 }
