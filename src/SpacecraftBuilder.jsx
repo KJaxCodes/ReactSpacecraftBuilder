@@ -27,7 +27,7 @@ function SpacecraftBuilder() {
                 <ItemForm onItemSubmit={addItem} />
             </div>
             <div>
-                <InventoryDisplay inventory={inventory} onDeleteIte={deleteItem} />
+                <InventoryDisplay inventory={inventory} onDeleteItem={deleteItem} />
             </div>
         </div>
     )

@@ -42,3 +42,13 @@ button:hover {
   padding: 1rem;
   border: 2px solid #ffffff;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.input-error {
+  border: 2px solid red !important;
+}
